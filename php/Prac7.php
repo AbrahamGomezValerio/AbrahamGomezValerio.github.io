@@ -19,8 +19,8 @@
     $vartext = "Hola! Ahora estoy usando variables"; 
     echo $vartext . "<br>";
 
-    $varnum1 = 4;
-    $varnum2 = 4;
+    $varnum1 = 5;
+    $varnum2 = 6;
     $res = $varnum1 + $varnum2;
     echo "El resultado de la suma de $varnum1 y $varnum2 es = $res";
     ?>
