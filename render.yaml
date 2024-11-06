@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: mi-sitio-html-php
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
