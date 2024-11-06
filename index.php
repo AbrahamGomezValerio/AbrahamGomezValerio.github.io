@@ -5,6 +5,7 @@
 <h1> Aquí se subiran las prácticas de Programación Web </h1>
 </head>
 <body>
+  <?php
   <h2> Prácticas en HTML </h2>
   <ol>
 <li> <a href="Practicas\Prac1.html" title="Práctica 1"> Práctica 1 </a> </li>
@@ -23,5 +24,6 @@
 <ol>
   <li> <a href="php\Prac7.php" title="Práctica 7"> Práctica 7 </a> </li>
 </ol>
+    ?>
 </body>
 </html>
