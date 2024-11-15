@@ -1,6 +1,16 @@
 services:
   - type: web
-    name: mi-sitio-html-php
+    name: mi-aplicacion-php
     env: docker
     plan: free
     dockerfilePath: ./Dockerfile
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase: mi-base-datos
+
+databases:
+  - name: mi-base-datos
+    databaseName: nombre_bd
+    user: usuario
+    password: contraseña_segura
+    plan: free
