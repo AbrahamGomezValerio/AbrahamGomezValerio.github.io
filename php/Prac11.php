@@ -2,20 +2,25 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Práctica #11 - MySQL y PHP</title>
+    <title>Práctica #11 - PostgreSQL y PHP</title>
 </head>
 <body>
 <?php
-require ("config.php"); //Llamar al archivo donde están las variables de la BD
-echo "<h1>Práctica de conexión a mi servidor de datos MYSQL </h1>";
-if ($conexion=mysqli_connect($host, $port, $usuario, $password, $BD)) //Para saber si se hizo la conexión de la BD
-{
+require("config.php");
+
+echo "<h1>Práctica de conexión a mi servidor de datos PostgreSQL</h1>";
+
+try {
+    $dsn = "pgsql:host=$host;port=$port;dbname=$BD";
+    $conexion = new PDO($dsn, $usuario, $password);
+    $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     echo "Tu conexión ha sido exitosa <br>";
-} else {
-    echo "Error conectando con MYSQL <br>" .mysqli_connect_error(); //Función para saber cual es error de porque no se conecto la BD
+} catch (PDOException $e) {
+    echo "Error conectando con PostgreSQL: " . $e->getMessage();
 }
+
 echo "<br><br>";
-mysqli_close($conexion); //Cerrar el servidor
+$conexion = null; // Cerrar la conexión
 ?>
 </body>
 </html>
