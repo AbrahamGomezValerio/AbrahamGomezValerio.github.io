@@ -15,6 +15,7 @@ try {
     $conexion = new PDO($dsn, $usuario, $password);
     $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     echo "Tu conexión ha sido exitosa <br>";
+    echo "Esta es la dirección del host: $host y el nombre de la BD es $BD";
 } catch (PDOException $e) {
     echo "Error conectando con PostgreSQL: " . $e->getMessage();
 }
