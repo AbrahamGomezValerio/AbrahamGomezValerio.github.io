@@ -20,7 +20,7 @@
         $tabla = "prueba1";
         $consulta = "
             CREATE TABLE IF NOT EXISTS $tabla (
-                id int(10) ,
+                id SERIAL,
                 nombre VARCHAR(50)
             );
         ";
