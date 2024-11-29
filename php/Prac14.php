@@ -17,11 +17,13 @@
         $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // Definir nombre de la tabla y el script SQL para crearla
-        $tabla = "prueba1";
+        $tabla = "usuarios";
         $consulta = "
             CREATE TABLE IF NOT EXISTS $tabla (
-                id SERIAL,
-                nombre VARCHAR(50)
+                id SERIAL PRIMARY KEY,
+                nombre VARCHAR(50) NOT NULL,
+                correo VARCHAR(100) NOT NULL,
+                edad INTEGER NOT NULL
             );
         ";
 
@@ -40,3 +42,4 @@
     ?>
 </body>
 </html>
+
